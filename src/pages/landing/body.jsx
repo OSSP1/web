@@ -1,0 +1,63 @@
+import useInput from "../../hooks/useInput";
+import { BodyDiv } from "./style";
+import { getResult } from "../../apis/Apis";
+import { useState, useCallback } from "react";
+function Body() {
+    const [ resultText, setResultText ] = useState('');
+    const translate = useCallback(async (e) => {
+        e.preventDefault();
+        const text = e.target[0].value;
+        const currForm = document.getElementById('from').innerText;
+        const resultBox = document.getElementById('resultBox');
+        if (currForm === '제주어') {
+            await getResult('d2s', text).then((response) => {
+                resultBox.innerText = response;
+            });
+        }
+        else{
+            await getResult('s2d', text).then((response) => {
+                resultBox.innerText = response;
+            });
+        }
+    });
+
+    // text
+    const [ text, onChangeText, setText ] = useInput('');
+
+    // 제주어 표준어 바꾸기
+    const changeLanguage = () => {
+        const from = document.getElementById('from');
+        const to  = document.getElementById('to');
+        
+        // 제주어일 경우
+        if (from.innerText==='제주어'){
+            from.innerText = '표준어';
+            to.innerText = '제주어';
+        }
+        // 표준어일 경우
+        else{
+            from.innerText = '제주어';
+            to.innerText = '표준어';
+        }
+
+    }
+    return (
+        <BodyDiv>
+            <h1>제주어 번역기</h1>
+            <form onSubmit={translate} onChange={onChangeText}>
+                <div>
+                    <p id='from'>제주어</p>
+                    <p onClick={changeLanguage}>바꾸기</p>
+                    <p id='to'>표준어</p>
+                </div>
+                <div>
+                    <textarea name="" id="text" cols="30" rows="10"></textarea>
+                    <div id="resultBox"></div>
+                </div>
+                <button type="submit" onSubmit={translate}>번역하기</button>
+            </form>
+        </BodyDiv>
+    )
+}
+
+export default Body
