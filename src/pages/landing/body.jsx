@@ -1,9 +1,9 @@
 import useInput from "../../hooks/useInput";
 import { BodyDiv } from "./style";
 import { getResult } from "../../apis/Apis";
-import { useState, useCallback } from "react";
+import { useCallback } from "react";
+import { Link } from "react-router-dom";
 function Body() {
-    const [ resultText, setResultText ] = useState('');
     const translate = useCallback(async (e) => {
         e.preventDefault();
         const text = e.target[0].value;
@@ -39,7 +39,12 @@ function Body() {
             from.innerText = '제주어';
             to.innerText = '표준어';
         }
-
+    }
+    const clear = () => {
+        const text = document.getElementById('text');
+        const resultBox = document.getElementById('resultBox');
+        text.value = '';
+        resultBox.innerText='';
     }
     return (
         <BodyDiv>
@@ -47,7 +52,10 @@ function Body() {
             <form onSubmit={translate} onChange={onChangeText}>
                 <div>
                     <p id='from'>제주어</p>
-                    <p onClick={changeLanguage}>바꾸기</p>
+                    <p onClick={changeLanguage}>
+                        {'->'} <br/>
+                        바꾸기
+                    </p>
                     <p id='to'>표준어</p>
                 </div>
                 <div>
@@ -55,6 +63,7 @@ function Body() {
                     <div id="resultBox"></div>
                 </div>
                 <button type="submit" onSubmit={translate}>번역하기</button>
+                <p onClick={clear}>초기화</p>
             </form>
         </BodyDiv>
     )

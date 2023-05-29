@@ -11,7 +11,7 @@ export const BodyDiv = styled.div`
         
         width:70%;
         margin: 0 auto;
-
+        
         div:nth-child(1){
             display: flex;
             p{
@@ -73,5 +73,67 @@ export const BodyDiv = styled.div`
             background-color: #00B9FF;
             color: #fff;
         }
+        p:nth-child(4){
+            display: block;
+            border: none;
+            background-color: #fff;
+            margin: 0 auto;
+            width: 20%;
+            margin-top: 20px;
+            font-size: 25px;
+            cursor: pointer;
+            padding: 0;
+            line-height: 2;
+            border-radius: 10px;
+            color: #00B9FF;
+            text-align: center;
+            border: 3px solid #00B9FF;
+            box-sizing: border-box;
+        }
+        /* 반응형 */
+        @media screen and (max-width:1000px){
+            div:nth-child(1){
+                p{
+                    font-size: 100%;
+                }
+                p:nth-child(1){
+                    width: 30%;
+                    font-size: 110%;
+                    line-height: 2;
+                }
+                p:nth-child(2){
+                    width: 40%;
+                }
+                p:nth-child(3){
+                    width: 30%;
+                    font-size: 110%;
+                    line-height: 2;
+                }
+
+            }
+
+            div:nth-child(2){
+                display: block;
+                textarea{
+                    width:100%;
+                    height: 200px;
+                }
+
+                div{
+                    width:100%;
+                    height: 200px;
+                }
+            }
+
+            button{
+                width: 50%;
+                font-size: 20px;
+            }
+            p:nth-child(4){
+                width: 50%;
+                font-size: 20px;
+            }
+        }
     }
+    
 `
