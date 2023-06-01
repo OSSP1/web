@@ -67,6 +67,7 @@ function Body() {
 
                 <div class="user-name">
                     <h4> Made by <a href="https://github.com/garden-jun">정원준</a>, <a href="https://github.com/eunbinni">신은빈</a>, <a href="https://github.com/seopp">임승섭</a></h4>
+                    <br></br>
                     <h4> You can click on the name to check the GitHub.</h4>
                 </div>
             </form>
