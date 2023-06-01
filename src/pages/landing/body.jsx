@@ -46,23 +46,6 @@ function Body() {
         text.value = '';
         resultBox.innerText='';
     }
-    function translate() {
-        const progressBar = document.getElementById('translation-progress');
-        progressBar.value = 0; // 번역 작업 시작 전에 진행 상태를 초기화합니다.
-      
-        let progress = 0;
-        const interval = setInterval(() => {
-          progress += 10; // 예시로 10%씩 증가하는 것으로 가정합니다.
-          progressBar.value = progress;
-      
-          if (progress >= 100) {
-            clearInterval(interval);
-          }
-        }, 100); // 1초마다 진행 상태를 업데이트합니다.
-      }
-
-
-
     return (
         <BodyDiv>
             <h1>제주어 번역기</h1>
@@ -79,7 +62,7 @@ function Body() {
                     <textarea name="" id="text" cols="30" rows="10"></textarea>
                     <div id="resultBox"></div>
                 </div>
-                <progress id="translation-progress" value="0" max="100"></progress>
+                
                 <button type="submit" onSubmit={translate}>번역하기</button>
                 <p onClick={clear}>초기화</p>
                 
