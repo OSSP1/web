@@ -7,6 +7,13 @@ export const BodyDiv = styled.div`
         margin-top: 30px;
     }
 
+    .user-name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: gray;
+      }
+
     form{
         
         width:70%;

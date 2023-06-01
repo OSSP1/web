@@ -65,8 +65,10 @@ function Body() {
                 <button type="submit" onSubmit={translate}>번역하기</button>
                 <p onClick={clear}>초기화</p>
 
-                <h5> Made by <a href="https://github.com/garden-jun">정원준</a>, <a href="https://github.com/eunbinni">신은빈</a>, <a href="https://github.com/seopp">임승섭</a></h5>
-                <h5> You can click on the name to check the GitHub.</h5>
+                <div class="user-name">
+                    <h4> Made by <a href="https://github.com/garden-jun">정원준</a>, <a href="https://github.com/eunbinni">신은빈</a>, <a href="https://github.com/seopp">임승섭</a></h4>
+                    <h4> You can click on the name to check the GitHub.</h4>
+                </div>
             </form>
         </BodyDiv>
     )
