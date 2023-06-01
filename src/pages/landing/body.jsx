@@ -51,12 +51,12 @@ function Body() {
             <h1>제주어 번역기</h1>
             <form onSubmit={translate} onChange={onChangeText}>
                 <div>
-                    <p id='from'>제주어</p>
+                    <p id='from'>표준어</p>
                     <p onClick={changeLanguage}>
                         {'->'} <br/>
                         바꾸기
                     </p>
-                    <p id='to'>표준어</p>
+                    <p id='to'>제주어</p>
                 </div>
                 <div>
                     <textarea name="" id="text" cols="30" rows="10"></textarea>
@@ -64,6 +64,9 @@ function Body() {
                 </div>
                 <button type="submit" onSubmit={translate}>번역하기</button>
                 <p onClick={clear}>초기화</p>
+
+                <h5> Made by <a href="https://github.com/garden-jun">정원준</a>, <a href="https://github.com/eunbinni">신은빈</a>, <a href="https://github.com/seopp">임승섭</a></h5>
+                <h5> You can click on the name to check the GitHub.</h5>
             </form>
         </BodyDiv>
     )
