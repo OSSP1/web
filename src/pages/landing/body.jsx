@@ -49,6 +49,7 @@ function Body() {
     return (
         <BodyDiv>
             <h1>제주어 번역기</h1>
+            <h5 class="user-name"> 번역하는데 5초정도 소요됩니다. </h5>
             <form onSubmit={translate} onChange={onChangeText}>
                 <div>
                     <p id='from'>표준어</p>
